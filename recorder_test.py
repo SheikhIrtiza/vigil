@@ -27,14 +27,23 @@ class Detect_verify:
             if not ret:
                 break
 
+            # try:
+            #     faces = DeepFace.extract_faces(frames, detector_backend = self.model_names[1])[0]["facial_area"]
+            #     cv2.rectangle(frames, (faces["x"],faces["y"]), (faces["x"]+faces["w"], faces["y"]+faces["h"]), (255, 0, 0), 2)
+            #     cv2.imshow("Detect Faces", frames)
+            
+            # except Exception as E:
+            #     cv2.imshow("Detect Faces", frames)
             try:
-                faces = DeepFace.extract_faces(frames, detector_backend = self.model_names[1])[0]["facial_area"]
-                cv2.rectangle(frames, (faces["x"],faces["y"]), (faces["x"]+faces["w"], faces["y"]+faces["h"]), (255, 0, 0), 2)
+                detected_faces = DeepFace.extract_faces(frames, detector_backend=self.model_names[1], enforce_detection=False)
+                for face in detected_faces:
+                    facial_area = face["facial_area"]
+                    cv2.rectangle(frames, (facial_area["x"], facial_area["y"]), (facial_area["x"]+facial_area["w"], facial_area["y"]+facial_area["h"]), (255, 0, 0), 2)
                 cv2.imshow("Detect Faces", frames)
-            
             except Exception as E:
+                print(f"An error occurred: {E}")
                 cv2.imshow("Detect Faces", frames)
-            
+
             # cv2.imshow('Source Video', frames)
 
             self.encoding_data.append(frames)

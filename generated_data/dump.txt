@@ -1,1 +1,1 @@
-passengers present: ['candidate_5'], passengers_missing: ['.DS_Store', 'candidate_5.jpg', 'candidate_3.jpg', 'candidate_2.jpg'], passengers_not_registered: []
+passengers present: ['candidate_1', 'candidate_2', 'candidate_3'], passengers_missing: ['candidate_5.jpg'], passengers_not_registered: ['candidate_4.jpg']
