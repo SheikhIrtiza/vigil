@@ -1,1 +1,1 @@
-passengers present: ['candidate_1', 'candidate_2', 'candidate_3'], passengers_missing: ['candidate_5.jpg'], passengers_not_registered: ['candidate_4.jpg']
+passengers present: ['candidate_1_1', 'candidate_1_2'], passengers_missing: ['candidate_1.jpg', 'candidate_2.jpg', 'candidate_3.jpg', 'candidate_5.jpg', 'ds_facenet512_opencv_v2.pkl'], passengers_not_registered: []
